@@ -1,0 +1,98 @@
+# Build APK for Nexvora using remote Chromium build infrastructure
+# Triggers the remote build server at longbuild.find.kiwi (requires access)
+# or configure your own build server via BUILD_SERVER_URL secret.
+#
+# Required secrets:
+#   BUILD_KEY - Authentication key for the build server
+#   (Optional) BUILD_SERVER_URL - Custom build server endpoint
+
+name: 'Nexvora: Build APK'
+
+on:
+  pull_request:
+    branches:
+      - main
+      - nexvora
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to build'
+        required: true
+        default: 'nexvora'
+
+concurrency: build_nexvora_apk
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v4.8
+
+      - name: Determine branch
+        id: branch
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "name=${{ github.event.inputs.branch }}" >> $GITHUB_OUTPUT
+          else
+            echo "name=${{ steps.branch-name.outputs.current_branch }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Call remote build server
+        env:
+          BUILD_SERVER: ${{ secrets.BUILD_SERVER_URL || 'http://longbuild.find.kiwi/build_apk.php' }}
+          BUILD_KEY: ${{ secrets.BUILD_KEY }}
+        run: |
+          if [ -z "$BUILD_KEY" ]; then
+            echo "ERROR: BUILD_KEY secret is required to trigger remote build."
+            echo "Set BUILD_KEY in repository secrets, or use a local build via build_nexvora.sh"
+            exit 1
+          fi
+          curl --http1.0 --no-buffer -s \
+            "${BUILD_SERVER}?build_key=${BUILD_KEY}&git_user=${{ github.repository_owner }}&git_repository=${{ github.event.repository.name }}&git_runid=${{ github.run_id }}&git_branch=${{ steps.branch.outputs.name }}"
+
+      - name: Download APK
+        if: success()
+        run: |
+          echo "Waiting for build to complete..."
+          for i in $(seq 1 180); do
+            if wget -q "https://build.find.kiwi/apks/${{ github.run_id }}/out.apk" -O nexvora.apk 2>/dev/null; then
+              echo "APK downloaded successfully"
+              ls -la nexvora.apk
+              break
+            fi
+            if [ $i -eq 180 ]; then
+              echo "ERROR: Build timeout - APK not available after 3 hours"
+              exit 1
+            fi
+            sleep 60
+          done
+
+      - name: Create Release
+        if: github.event_name != 'pull_request' && success()
+        id: create_release
+        uses: actions/create-release@v1.1.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: nexvora-${{ github.run_id }}
+          release_name: "Nexvora Build ${{ github.run_id }}"
+          draft: true
+          prerelease: true
+          body: |
+            Nexvora build initiated by ${{ github.actor }}
+            Branch: ${{ steps.branch.outputs.name }}
+            Run ID: ${{ github.run_id }}
+
+      - name: Upload APK
+        if: github.event_name != 'pull_request' && success()
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./nexvora.apk
+          asset_name: com.nexvora.app-arm64-${{ github.run_id }}.apk
+          asset_content_type: application/vnd.android.package-archive

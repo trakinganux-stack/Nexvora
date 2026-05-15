@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nexvora_app_name">Nexvora</string>
+    <string name="nexvora_home">Home</string>
+    <string name="nexvora_search">Search</string>
+    <string name="nexvora_downloads">Downloads</string>
+    <string name="nexvora_extensions">Extensions</string>
+    <string name="nexvora_settings">Settings</string>
+    <string name="nexvora_trending">Trending</string>
+    <string name="nexvora_continue_watching">Continue Watching</string>
+    <string name="nexvora_recommended">Recommended For You</string>
+    <string name="nexvora_popular">Popular Now</string>
+    <string name="nexvora_search_hint">Search movies, websites, topics…</string>
+    <string name="nexvora_no_downloads">No downloads yet</string>
+    <string name="nexvora_extensions_empty">No extensions installed</string>
+    <string name="nexvora_install_extensions">Install from Chrome Web Store</string>
+    <string name="nexvora_manage_extensions">Manage Extensions</string>
+    <string name="nexvora_privacy">Privacy &amp; Security</string>
+    <string name="nexvora_privacy_summary">Manage cookies, cache, and site data</string>
+    <string name="nexvora_search_engine">Search Engine</string>
+    <string name="nexvora_search_engine_summary">Change default search provider</string>
+    <string name="nexvora_cookie_editor">Cookie Editor</string>
+    <string name="nexvora_cookie_editor_summary">View, edit, import, and export cookies</string>
+    <string name="nexvora_notifications">Notifications</string>
+    <string name="nexvora_notifications_summary">Manage notification preferences</string>
+    <string name="nexvora_about">About Nexvora</string>
+    <string name="nexvora_about_summary">Version 1.0.0 - Powered by Chromium</string>
+    <string name="nexvora_watch_now">Watch Now</string>
+    <string name="nexvora_clear_search">Clear search</string>
+    <string name="nexvora_trending_searches">Trending Searches</string>
+    <string name="nexvora_no_results">No results found</string>
+</resources>

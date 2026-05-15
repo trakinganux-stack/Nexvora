@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/nexvora_nav_bar">
+
+    <LinearLayout
+        android:id="@+id/nexvora_bottom_tab_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <LinearLayout
+            android:id="@+id/nexvora_nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/nexvora_nav_icon_home"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/nexvora_ic_home"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/nexvora_nav_label_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/nexvora_home"
+                android:textColor="@color/nexvora_text_secondary"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nexvora_nav_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/nexvora_nav_icon_search"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/nexvora_ic_search"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/nexvora_nav_label_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/nexvora_search"
+                android:textColor="@color/nexvora_text_secondary"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nexvora_nav_downloads"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/nexvora_nav_icon_downloads"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/nexvora_ic_download"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/nexvora_nav_label_downloads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/nexvora_downloads"
+                android:textColor="@color/nexvora_text_secondary"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nexvora_nav_extensions"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/nexvora_nav_icon_extensions"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/nexvora_ic_extension"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/nexvora_nav_label_extensions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/nexvora_extensions"
+                android:textColor="@color/nexvora_text_secondary"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nexvora_nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <ImageView
+                android:id="@+id/nexvora_nav_icon_settings"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/nexvora_ic_settings"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/nexvora_nav_label_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/nexvora_settings"
+                android:textColor="@color/nexvora_text_secondary"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

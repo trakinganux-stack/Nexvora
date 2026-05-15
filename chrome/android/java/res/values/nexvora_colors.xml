@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="nexvora_background">#0A0A0A</color>
+    <color name="nexvora_background_dark">#050505</color>
+    <color name="nexvora_background_card">#1A1A1A</color>
+    <color name="nexvora_background_card_pressed">#252525</color>
+    <color name="nexvora_accent_red">#E50914</color>
+    <color name="nexvora_accent_red_dark">#B2070F</color>
+    <color name="nexvora_accent_red_light">#FF1A25</color>
+    <color name="nexvora_text_primary">#FFFFFF</color>
+    <color name="nexvora_text_secondary">#999999</color>
+    <color name="nexvora_text_muted">#666666</color>
+    <color name="nexvora_surface">#121212</color>
+    <color name="nexvora_surface_light">#1E1E1E</color>
+    <color name="nexvora_divider">#2A2A2A</color>
+    <color name="nexvora_overlay">#80000000</color>
+    <color name="nexvora_nav_bar">#0D0D0D</color>
+    <color name="nexvora_gradient_start">#CC000000</color>
+    <color name="nexvora_gradient_end">#00000000</color>
+    <color name="nexvora_hero_overlay">#B3000000</color>
+    <color name="nexvora_shimmer_highlight">#33FFFFFF</color>
+    <color name="nexvora_shimmer_base">#1A1A1A</color>
+    <color name="nexvora_progress_track">#333333</color>
+    <color name="nexvora_progress_fill">#E50914</color>
+    <color name="nexvora_rating_star">#FFD700</color>
+    <color name="nexvora_badge">#E50914</color>
+    <color name="nexvora_badge_text">#FFFFFF</color>
+</resources>

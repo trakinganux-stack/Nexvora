@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nexvora_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/nexvora_settings"
+        android:textColor="@color/nexvora_text_primary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <include
+        android:id="@+id/nexvora_settings_privacy"
+        layout="@layout/nexvora_setting_item"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nexvora_divider" />
+
+    <include
+        android:id="@+id/nexvora_settings_extensions"
+        layout="@layout/nexvora_setting_item"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nexvora_divider" />
+
+    <include
+        android:id="@+id/nexvora_settings_search_engine"
+        layout="@layout/nexvora_setting_item"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nexvora_divider" />
+
+    <include
+        android:id="@+id/nexvora_settings_cookies"
+        layout="@layout/nexvora_setting_item"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nexvora_divider" />
+
+    <include
+        android:id="@+id/nexvora_settings_notifications"
+        layout="@layout/nexvora_setting_item"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/nexvora_divider" />
+
+    <include
+        android:id="@+id/nexvora_settings_about"
+        layout="@layout/nexvora_setting_item"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+</LinearLayout>
